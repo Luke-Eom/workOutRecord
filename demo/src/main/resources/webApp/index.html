@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="#" onclick="allUserView()">모든 회원 검색</a>
+
+
+</body>
+<script>
+    function allUserView() {
+        const xhttp = new XHTMLRequest();
+        xhttp.onload = function() {
+            let data = this.responseText;
+            data = JSON.parse(data);
+            console.log(data);
+        }
+        xhttp.open("GET", "userRest/userAll");
+        xhttp.send();
+    }
+    
+</script>
+</html>
