@@ -29,6 +29,7 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	annotationProcessor 'org.mapstruct:mapstruct-processor:1.4.2.Final'
 	implementation 'org.mapstruct:mapstruct:1.4.2.Final'
 }
 
