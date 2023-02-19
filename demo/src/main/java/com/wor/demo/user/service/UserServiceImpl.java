@@ -17,7 +17,7 @@ public class UserServiceImpl implements UserService {
     UserRepository userRepo;
 
     @Transactional
-    public ArrayList<UserDto> getUserAll() {
+    public ArrayList<UserDto> getUserAll() throws Exception {
         ArrayList<User> userList = (ArrayList<User>)userRepo.findAll();
         ArrayList<UserDto> userDtoList = new ArrayList<UserDto>();
 

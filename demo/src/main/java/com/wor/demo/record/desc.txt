@@ -1,0 +1,16 @@
+개인 기록 페이지
+
+1. 운동 기록 분석
+
+2. 캘린더 
+    - 운동 계획 입력하기
+    - 그날의 운동 기록 입력하기
+
+    (계획 db / 기록 db) - 부위별 총 volume을 비교하여 달성도 track
+
+    기록 부분
+    - id(auto_gen) / user_id / date(입력 당시 time, 수정 불가) / work_out_id (참조) / weight / counts
+        : 어떤 운동인지는 db에서 받아오고 weight&count는 view에서 입력 받은 param 받아와서 저장
+
+    main point : 입력 즉 생성 및 수정 기능!!
+    * 추후 이 db의 data로 데이터 분석 시각화 페이지 따로 구성

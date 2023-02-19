@@ -9,6 +9,8 @@ import org.springframework.context.ApplicationContext;
 
 import com.wor.demo.user.dto.UserDto;
 import com.wor.demo.user.service.UserService;
+import com.wor.demo.workOut.dto.WorkOutDto;
+import com.wor.demo.workOut.service.WorkOutService;
 
 @SpringBootTest
 class DemoApplicationTests {
@@ -18,6 +20,9 @@ class DemoApplicationTests {
 
 	@Autowired
 	private UserService userService;
+
+	@Autowired
+	private WorkOutService woService;
 
 	@Test
 	public void contextLoads() throws Exception{
@@ -31,13 +36,22 @@ class DemoApplicationTests {
 	}
 	
 	@Test
-	public ArrayList<UserDto> userControllerTest() throws Exception{
+	public void userControllerTest() throws Exception{
 		ArrayList<UserDto> userAll = userService.getUserAll();
 
         if (userAll == null){
             System.out.println("회원정보 정보가 없습니다"); // exception handle required
         }
 		System.out.println(userAll);
-        return userAll;
+	}
+
+	@Test
+	public void woControllerTest() throws Exception{
+		ArrayList<WorkOutDto> woAll = woService.getWorkOutAll();
+
+        if (woAll == null){
+            System.out.println("운동 정보가 없습니다"); // exception handle required
+        }
+		System.out.println(woAll);
 	}
 }
