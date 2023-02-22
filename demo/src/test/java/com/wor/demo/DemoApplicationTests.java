@@ -1,5 +1,7 @@
 package com.wor.demo;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.util.ArrayList;
 
 import org.junit.jupiter.api.Test;
@@ -7,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 
+import com.wor.demo.bodyPart.dto.BodyPartDto;
+import com.wor.demo.bodyPart.service.BodyPartService;
 import com.wor.demo.user.dto.UserDto;
 import com.wor.demo.user.service.UserService;
 import com.wor.demo.workOut.dto.WorkOutDto;
@@ -23,6 +27,9 @@ class DemoApplicationTests {
 
 	@Autowired
 	private WorkOutService woService;
+
+	@Autowired
+	private BodyPartService bpService;
 
 	@Test
 	public void contextLoads() throws Exception{
@@ -53,5 +60,17 @@ class DemoApplicationTests {
             System.out.println("운동 정보가 없습니다"); // exception handle required
         }
 		System.out.println(woAll);
+
+	}
+
+	@Test
+	public void bpSearchTest() throws Exception {
+		
+		String name = "가슴";
+		BodyPartDto bp = bpService.getBpByName(name);
+		int actual = bp.getId();
+		int expected = 1;
+	
+		assertEquals(expected, actual);
 	}
 }

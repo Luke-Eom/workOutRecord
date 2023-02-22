@@ -1,4 +1,4 @@
-package com.wor.demo.workOut.dto;
+package com.wor.demo.bodyPart.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,11 +9,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class WorkOutDto {
-    private long id;
+public class BodyPartDto {
+    private int id;
 
     private String name;
-
-    private int bodyPartId;
-
 }

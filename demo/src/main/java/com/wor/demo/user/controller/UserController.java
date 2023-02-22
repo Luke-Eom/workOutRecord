@@ -12,7 +12,7 @@ import com.wor.demo.user.dto.UserDto;
 import com.wor.demo.user.service.UserService;
 
 @RestController
-@RequestMapping("userRest")
+@RequestMapping("u")
 public class UserController {
     @Autowired
     private UserService userService;
