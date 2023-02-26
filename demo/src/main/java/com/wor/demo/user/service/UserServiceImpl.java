@@ -22,7 +22,7 @@ public class UserServiceImpl implements UserService {
         ArrayList<UserDto> userDtoList = new ArrayList<UserDto>();
 
         for (User i : userList){
-            userDtoList.add(UserMapper.INSTANCE.UserDtoToEntity(i));
+            userDtoList.add(UserMapper.INSTANCE.userDtoToEntity(i));
         }
 
         return userDtoList;
@@ -31,7 +31,7 @@ public class UserServiceImpl implements UserService {
 
     public UserDto getUserByNickname(String nickname){
         User user = userRepo.findByNickname(nickname);
-        UserDto userDto = UserMapper.INSTANCE.UserDtoToEntity(user);
+        UserDto userDto = UserMapper.INSTANCE.userDtoToEntity(user);
 
         return userDto;
 
