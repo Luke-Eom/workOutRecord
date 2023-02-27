@@ -1,5 +1,7 @@
 package com.wor.demo.workOut.dto;
 
+import com.wor.demo.bodyPart.dto.BodyPartDto;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,6 +16,6 @@ public class WorkOutDto {
 
     private String name;
 
-    private int bodyPartId;
+    private BodyPartDto bodyPartId;
 
 }
