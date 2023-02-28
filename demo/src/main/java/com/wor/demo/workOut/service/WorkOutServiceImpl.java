@@ -22,12 +22,30 @@ public class WorkOutServiceImpl implements WorkOutService{
         ArrayList<WorkOutDto> woDtoList = new ArrayList<WorkOutDto>();
 
         for (WorkOut i : woList){
-            woDtoList.add(WorkOutMapper.INSTANCE.woDtoToEntity(i));
+            woDtoList.add(WorkOutMapper.INSTANCE.woToDto(i));
         }
 
         return woDtoList;
 
     }
+
+    public WorkOutDto getWorkOut(Long id) {
+        WorkOut wo = woRepo.findById(id).get();
+        return WorkOutMapper.INSTANCE.woToDto(wo);
+
+    }
+
+    public ArrayList<WorkOutDto> getWorkOutByBp(){
+        ArrayList<WorkOut> woList = (ArrayList<WorkOut>)woRepo.findByBodyPartId();
+        ArrayList<WorkOutDto> woDtoList = new ArrayList<WorkOutDto>();
+
+        for (WorkOut i : woList){
+            woDtoList.add(WorkOutMapper.INSTANCE.woToDto(i));
+        }
+
+        return woDtoList;
+    }
+
     
-    // 운동 이름으로 찾기, 신체 부위별 찾기, 기구여부 찾기 (기구여부, 신체부위별 중복 옵션 로직 짜기)
+    // 운동 이름으로 찾기, 신체 부위별 찾기
 }

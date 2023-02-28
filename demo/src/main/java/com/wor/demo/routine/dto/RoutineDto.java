@@ -12,14 +12,12 @@ import lombok.NoArgsConstructor;
 public class RoutineDto {
     private long id;
 
-     private long recordId;
+    private long recordId;
 
-     private long workOutId;
-     
-     private int sets;
+    private long workOutId;
  
-     private long weights;
+    private long weights;
  
-     private int reps;
+    private int reps;
     
 }

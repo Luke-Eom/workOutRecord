@@ -12,5 +12,5 @@ public interface WorkOutMapper {
     WorkOutMapper INSTANCE = Mappers.getMapper(WorkOutMapper.class);
 
     @Mapping(target = "id")
-    WorkOutDto woDtoToEntity(WorkOut workOut);
+    WorkOutDto woToDto(WorkOut workOut);
 }

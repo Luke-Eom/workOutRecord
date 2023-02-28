@@ -1,6 +1,8 @@
 package com.wor.demo.routine.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -22,6 +24,7 @@ import lombok.NoArgsConstructor;
 public class Routine {
     
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     // N:1
@@ -32,10 +35,8 @@ public class Routine {
     @OneToOne
     @JoinColumn(name = "work_out_id")
     private WorkOut workOutId;
-    
-    private int sets;
 
-    private long weights;
+    private long weight;
 
     private int reps;
    
