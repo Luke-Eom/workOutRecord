@@ -18,10 +18,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.wor.demo.user.domain.User;
 import com.wor.demo.user.dto.UserDto;
 import com.wor.demo.user.service.JwtService;
 import com.wor.demo.user.service.UserService;
+
+import io.jsonwebtoken.Claims;
 
 @RestController
 @RequestMapping("u")
@@ -53,7 +54,7 @@ public class UserController {
     @PostMapping("/login")
     public ResponseEntity login(@RequestBody Map<String, String> params, HttpServletResponse res) {
         // * member service로 바꾸고 카톡 연동 적용하기
-        User user = userService.findByEmailAndPassword(params.get("email"), params.get("password"));
+        UserDto user = userService.getUserByEmailAndPassword(params.get("email"), params.get("password"));
         if (user != null) {
             int id = user.getId();
             String token = jwtService.getToken("id", id);
