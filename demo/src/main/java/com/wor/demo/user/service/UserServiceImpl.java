@@ -37,6 +37,13 @@ public class UserServiceImpl implements UserService {
 
     }
 
+    public UserDto getUserByEmailAndPassword(String email, String password){
+        User user = userRepo.findByEmailAndPassword(email, password);
+        UserDto userDto = UserMapper.INSTANCE.userToDto(user);
+
+        return userDto;
+    }
+
     // 성별 검색 구현
 
     // 나이대 별 검색
